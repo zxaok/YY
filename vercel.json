@@ -1,15 +1,13 @@
 {
   "version": 2,
   "functions": {
-    "api/yy.js": { "runtime": "nodejs18.x", "maxDuration": 10 }
+    "api/yy.js": {
+      "runtime": "nodejs20.x",
+      "memory": 128,
+      "maxDuration": 10
+    }
   },
   "routes": [
-    {
-      "src": "/api/yy",
-      "headers": {
-        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=60"
-      },
-      "continue": true
-    }
+    { "src": "/api/yy", "dest": "/api/yy.js" }
   ]
 }
